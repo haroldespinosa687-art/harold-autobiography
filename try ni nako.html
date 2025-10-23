@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Autobiography</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --red-900: #9e0008;
+      --red-800: #5f0106;
+      --red-700: #6a0815;
+      --card-bg: #ffffff;
+      --page-bg: #eef1f3;
+      --muted: #3b0108;
+      --accent: #c10f0f;
+      --radius: 0px;
+      --max-width: 820px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--page-bg) 0%, #f4f6f7 100%);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      background-image: url('https://scontent.fcgy2-4.fna.fbcdn.net/v/t39.30808-6/568211785_1161812719217459_6647850103649159697_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEmYeeOw0grgo_wcEFWARdkaEYbi-DX4LtoRhuL4Nfgu0WCsF0kKC7_KSQ5V2Ae9wa-rwBSbR04kslLH7LFaKox&_nc_ohc=eLysWj2Vt5oQ7kNvwH0_hsD&_nc_oc=AdnCspv0szOFhyi5nKHbTRgfDC2u4BatuWgRHWzlfQDD9q6qjEMl-dowFumciglITIU&_nc_zt=23&_nc_ht=scontent.fcgy2-4.fna&_nc_gid=f_lPQhpu2RJTVF1B07mcQA&oh=00_AfcEbWq_ehDeOmSL3Dy4hF6rPc1HMk8Amrp75Zrtnk-Msw&oe=68FCED3D');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Top hero */
+    .hero{
+      background: linear-gradient(180deg, var(--red-900), var(--red-800));
+      color:rgb(255, 255, 255);
+      padding:54px 0 24px;
+      text-align:center;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+      box-shadow: 0 6px 0 rgba(0,0,0,0.06) inset;
+    }
+    .hero h1{
+      margin:0;
+      font-size:36px;
+      font-weight:700;
+      letter-spacing:0.3px;
+    }
+    .hero .subtitle{
+      margin-top:10px;
+      font-weight:400;
+      opacity:0.95;
+      font-size:15px;
+    }
+
+    /* thin dark nav bar */
+    nav.topnav{
+      background:var(--red-700);
+      display:flex;
+      justify-content:center;
+      gap:28px;
+      padding:12px 8px;
+      font-weight:600;
+    }
+    nav.topnav a{
+      color: #ffffff;
+      text-decoration:none;
+      font-size:15px;
+      opacity:0.95;
+      transition:opacity .15s, transform .15s;
+    }
+    nav.topnav a:hover{ opacity:1; transform:translateY(-2px) }
+
+    /* container */
+    .container{
+      max-width: var(--max-width);
+      margin: 28px auto;
+      padding: 0 20px 60px;
+    }
+
+    /* profile image */
+    .profile-wrap{
+      display:flex;
+      justify-content:center;
+      margin-top: 18px;
+      margin-bottom: 22px;
+    }
+    .profile{
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      border:6px solid #570202;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      background:linear-gradient(180deg,#ffffff00,#f4f7fb05);
+      box-shadow: 0 6px 18px rgba(100, 12, 12, 0.12);
+    }
+    .profile img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* card */
+    .card{
+      background: var(--card-bg);
+      border-radius: calc(var(--radius));
+      box-shadow: 0 6px 18px rgba(30,50,80,0.06);
+      padding: 20px;
+      margin-top: 20px;
+      border: 1px solid rgba(12,55,100,0.04);
+    }
+
+    .card h2{
+      margin:0 0 10px 0;
+      color: var(--red-900);
+      font-size:20px;
+    }
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:15px;
+    }
+
+    /* smaller cards spacing (multiple sections) */
+    .sections{
+      margin-top:12px;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    /* quick nav anchor style */
+    .nav-inline{
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      margin-top:10px;
+      margin-bottom:6px;
+    }
+    .nav-inline a{
+      text-decoration:none;
+      color:var(--red-900);
+      background: rgba(166, 11, 11, 0.06);
+      padding:8px 12px;
+      border-radius:8px;
+      font-weight:600;
+      font-size:14px;
+    }
+    .nav-inline a:hover{ transform:translateY(-2px) }
+
+    /* footer small */
+    footer{
+      text-align:center;
+      color:var(--muted);
+      margin:46px 0 80px;
+      font-size:13px;
+    }
+
+    /* responsive adjustments */
+    @media (max-width:600px){
+      .hero h1{ font-size:28px }
+      .profile{ width:130px; height:130px; border-width:5px }
+      .card{ padding:16px }
+      .nav-inline{ gap:8px }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero" role="banner">
+    <h1>My Autobiography</h1>
+    <div class="subtitle">By Harold C. Espinosa</div>
+  </header>
+   <nav class="topnav" role="navigation" aria-label="Main">
+    <a href="#about"></a>
+    <a href="#hobbies"></a>
+    <a href="#education"></a>
+    <a href="#goals"></a>
+  </nav>
+
+  <main class="container" role="main">
+    <div class="profile-wrap">
+      <!-- Replace the src below with your own image path -->
+      <div class="profile" aria-hidden="false">
+        <img src="https://scontent.fcgy2-1.fna.fbcdn.net/v/t39.30808-6/568618830_1161528692579195_2959442751780972254_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEUp2P76hBrA8lxLodqRXOgbv9qVa-8bUlu_2pVr7xtSchXmnzLKIm_qOAuI0EnDCXxU5OMEyhICWDsf4H7jL-X&_nc_ohc=haAGoXOu8JIQ7kNvwG-BEg7&_nc_oc=AdmYG1hN0uF2xn_WWrmpYZE6ty6wKwWCyLx4-y88Qlx4aHY2ObMowjgxd_m2SwSd91c&_nc_zt=23&_nc_ht=scontent.fcgy2-1.fna&_nc_gid=fW8PZd6zDA6hicErB7YxBA&oh=00_Aff6NvyD-HWCDNaUyJU5lZPQ8H_bB-Slj85LyYQ4AdFcIw&oe=68FCE7C1" alt="Profile photo of Harold C. Espinosa">
+      </div>
+    </div>
+
+    <div class="nav-inline" aria-hidden="true">
+      <a href="#introduction">Introduction</a>
+      <a href="#about">About Me</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#education">Education</a>
+      <a href="#goals">Goals</a>
+    </div>
+
+    <!-- Introduction -->
+    <section id="introduction" class="card" aria-labelledby="intro-title">
+      <h2 id="intro-title">Introduction</h2>
+      <p>
+        Hello, i am Harold C. Espinosa studying at LLCC
+        majoring in Bachelor of Industrial Technology with the grade and section of 1-C.
+      </p>
+    </section>
+
+    <div class="sections">
+      <!-- About Me -->
+      <section id="about" class="card" aria-labelledby="about-title">
+        <h2 id="about-title">About Me</h2>
+        <p>
+          I was born in Cagayan De Oro, Mindanao on June 8th of 2007. I'm the eldest in my family, soon  to be the breadwinner of my family. My Zodiac sign is Gemini and my favorite color is purple, brown, red, orange, green. I disliked crowded places, i dont like the taste of alcohol because my liver is permanently damaged, i dont like cigarretes.
+        </p>
+      </section>
+
+      <!-- Hobbies -->
+      <section id="hobbies" class="card" aria-labelledby="hobbies-title">
+        <h2 id="hobbies-title">Hobbies</h2>
+        <p>
+          I enjoy going outside sitting ina tree, watching the stars at night, i like to sing, i like to travel, i wanted to learn some instruments someday. I like to draw sometimes, cycling or biking.
+        </p>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="card" aria-labelledby="education-title">
+        <h2 id="education-title">Education</h2>
+        <p>
+          Currently enrolled at LLCC (Bachelor of Industrial Technology, Computer Technology). Previously finished high school at [Marigondon National Highschool]. I enjoy hands-on technical subjects and practical workshops.
+        </p>
+      </section>
+
+      <!-- Goals -->
+      <section id="goals" class="card" aria-labelledby="goals-title">
+        <h2 id="goals-title">Goals</h2>
+        <p>
+          I just wanted to finish education as soon as possible. <br>
+          Going to work somewhere abroad with everything i've learned and to finally do what i wanna do.
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      © <span id="year"></span>Harold C. Espinosa — Built with plain HTML & CSS
+    </footer>
+  </main>
+
+  <script>
+    // small scripts to enhance UX (replace profile image quickly on click)
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Optional: let user click profile to replace image (works locally if user selects a file)
+    const profileImg = document.querySelector('.profile img');
+    profileImg.addEventListener('click', () => {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = 'image/*';
+      input.onchange = () => {
+        const f = input.files[0];
+        if(!f) return;
+        const reader = new FileReader();
+        reader.onload = () => profileImg.src = reader.result;
+        reader.readAsDataURL(f);
+      };
+      input.click();
+    });
+  </script>
+</body>
+</html>
